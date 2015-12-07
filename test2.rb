@@ -15,13 +15,17 @@ require 'mechanize'
 	
 		place = mechanize.get('http://www.onthesnow.com/colorado/skireport.html')
 		page = mechanize.get('http://www.onthesnow.com/colorado/skireport.html')
-		wp_name = print place.at('.rowB .rLeft .name').text
-		print " "
-		wp_snow = print page.at('.rowB .rMid.c b').text
-		#puts "drive time: 20 min"
+		# wp_name = print place.at('.rowB .rLeft .name').text
+		# print " "
+		#wp_snow = print page.at('.rowB .rMid.c b').text
+		# puts "drive time: 20 min"
 
-		copper_name = print place.at('.rowD .rLeft .name').text
-		print " "
-		copper_snow = print page.at('.rowB .rMid.c b').text
+		# copper_name = print place.at('.rowD .rLeft .name').text
+		# print " "
+		# copper_snow = print page.at('.rowB .rMid.c b').text
 
+		array = print place.at('.rowB .rLeft.b').text
+		spot = array.at('')
+		d = spot.at('.name')
+		puts array
 
