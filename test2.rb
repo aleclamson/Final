@@ -24,8 +24,9 @@ require 'mechanize'
 		# print " "
 		# copper_snow = print page.at('.rowB .rMid.c b').text
 
-		array = print place.at('.rowB .rLeft.b').text
-		spot = array.at('')
-		d = spot.at('.name')
-		puts array
+		puts place.at('.rowB').text
+		# array.each {|a| puts a }
+
+
+
 

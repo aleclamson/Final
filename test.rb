@@ -1,7 +1,8 @@
 require 'mechanize'
+agent = Mechanize.new
+b = agent.get('http://www.onthesnow.com/colorado/skireport.html').search("tr.rowB")
+puts b[0].search('.name').text
 
-mechanize = Mechanize.new
 
-page = mechanize.get('http://www.bbc.com/news')
+print b[3].search('.name').text
 
-puts page.at('h3').text
