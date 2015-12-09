@@ -4,6 +4,7 @@ class Test
 		@agent = Mechanize.new
 		@resort_name = @agent.get('http://www.onthesnow.com/colorado/skireport.html').search("tr.rowB")
 		@snow = @agent.get('http://www.onthesnow.com/colorado/skireport.html').search("td.rMid.c")
+		@long_array = []
 		
 	end
 		
@@ -11,13 +12,18 @@ class Test
 	def do_stuff
 		name_snow(@resort_name[0], @snow[2])
 		name_snow(@resort_name[4], @snow[10])
+		name_snow(@resort_name[5], @snow[12])
+		name_snow(@resort_name[6], @snow[14])
+		name_snow(@resort_name[10], @snow[22])
+
+		puts @long_array
 	end
 
 	def name_snow name, snow
-		#long_array = []
-		print name.search('.name').text
-		print" "
-		puts snow.search('b').text
+		small_array = []
+		small_array.push(snow.search('b').text)
+		small_array.push(name.search('.name').text)
+		@long_array.push(small_array)
 	end
 
 end
