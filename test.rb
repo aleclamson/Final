@@ -1,8 +1,19 @@
 require 'mechanize'
+class Test
+	
 agent = Mechanize.new
-b = agent.get('http://www.onthesnow.com/colorado/skireport.html').search("tr.rowB")
-puts b[0].search('.name').text
+resort_name = agent.get('http://www.onthesnow.com/colorado/skireport.html').search("tr.rowB")
+snow = agent.get('http://www.onthesnow.com/colorado/skireport.html').search("td.rMid.c")
 
+#prints winter park
+print resort_name[0].search('.name').text
+print" "
+puts snow[2].search('b').text
 
-print b[3].search('.name').text
+#prints vail
+print resort_name[3].search('.name').text
+print" "
+puts snow[8].search('b').text
+
+end
 
