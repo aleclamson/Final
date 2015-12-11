@@ -12,7 +12,7 @@ class Test
 		(0..10).each { |index| name_snow(@resort_name[index], @snow[index*2 + 2])}
 
 		puts @long_array
-		puts""
+
 		puts
 		best_snow
 	end
@@ -34,7 +34,9 @@ end
 test = Test.new
 test.do_stuff
 
-
+# if @best == @small_array[1]
+# 	print "and is 20 min away"
+# end
 # prints vail
 # print resort_name[4].search('.name').text
 # print" "
