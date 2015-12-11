@@ -5,7 +5,6 @@ class Test
 		@resort_name = @agent.get('http://www.onthesnow.com/colorado/skireport.html').search("tr.rowB")
 		@snow = @agent.get('http://www.onthesnow.com/colorado/skireport.html').search("td.rMid.c")
 		@long_array = []
-		
 	end
 		
 	
@@ -16,14 +15,21 @@ class Test
 		name_snow(@resort_name[6], @snow[14])
 		name_snow(@resort_name[10], @snow[22])
 
-		puts @long_array
+		print @long_array
+		puts
+		best_snow
 	end
 
 	def name_snow name, snow
 		small_array = []
-		small_array.push(snow.search('b').text)
+		small_array.push(snow.search('b').text.to_i)
 		small_array.push(name.search('.name').text)
 		@long_array.push(small_array)
+	end
+
+	def best_snow
+		best = @long_array.index(@long_array.max)
+		puts "The best snow is #{@long_array[best][1]}"
 	end
 
 end
