@@ -9,13 +9,10 @@ class Test
 		
 	
 	def do_stuff
-		name_snow(@resort_name[0], @snow[2])
-		name_snow(@resort_name[4], @snow[10])
-		name_snow(@resort_name[5], @snow[12])
-		name_snow(@resort_name[6], @snow[14])
-		name_snow(@resort_name[10], @snow[22])
+		(0..10).each { |index| name_snow(@resort_name[index], @snow[index*2 + 2])}
 
-		print @long_array
+		puts @long_array
+		puts""
 		puts
 		best_snow
 	end
