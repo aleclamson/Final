@@ -11,10 +11,13 @@ class Test
 	def do_stuff
 		(0..10).each { |index| name_snow(@resort_name[index], @snow[index*2 + 2])}
 
-		puts @long_array
-
+		
+		(0..@long_array.length - 1).each { |a| puts "#{@long_array[a][1]} #{@long_array[a][0]}" }
 		puts
 		best_snow
+
+		
+		
 	end
 
 	def name_snow name, snow
@@ -27,6 +30,10 @@ class Test
 	def best_snow
 		best = @long_array.index(@long_array.max)
 		puts "The best snow is #{@long_array[best][1]}"
+
+		# if best == ["Loveland"]
+ 	# 		puts "and is 20 min away"
+		# end
 	end
 
 end
@@ -34,9 +41,7 @@ end
 test = Test.new
 test.do_stuff
 
-# if @best == @small_array[1]
-# 	print "and is 20 min away"
-# end
+	
 # prints vail
 # print resort_name[4].search('.name').text
 # print" "
